@@ -1,0 +1,56 @@
+<!DOCTYPE>
+<html>
+    <header>
+        <title>SnapShot For Face Detection</title>
+    </header>
+    <body>
+        <div id="screenshot">
+
+            <h1>Snapshot for face detection</h1>
+
+            <button class="capture">Capture video</button><br />
+
+            <video autoplay style="border:1px black solid;" width="380" id="video" height="320"></video>
+
+            <img src="" style="border:1px blue solid" id="img" width="380" height="320" />
+
+            <canvas style="display:none;"></canvas>
+
+            <br/><br/>
+        </div>
+
+        <script>
+            var mode = false;
+            const MODEL_URL = '/models';
+            const constraints = { video : true }
+
+            const captureVideoButton = document.querySelector("#screenshot .capture");
+
+            const img = document.querySelector("#img");
+            const video = document.querySelector("#video");
+            
+            const canvas = document.createElement("canvas");
+            captureVideoButton.onclick = function(){
+                mode = true;
+                navigator.mediaDevices.getUserMedia(constraints).
+                then(handleSuccess).catch(handleError);
+            };
+            setInterval(async() => {if(mode)
+            {    
+                canvas.width = video.videoWidth;
+                canvas.height = video.videoHeight;
+                canvas.getContext('2d').drawImage(video, 0, 0);
+                img.src = canvas.toDataURL('image/webp');      
+              }   
+            }, 6000);
+            
+            function handleSuccess(stream){
+                //screenShotButton.disabled = false;
+                video.srcObject = stream;
+            }
+            function handleError(error) {
+                console.error('Error: ', error);
+            }
+        </script>
+    </body>
+</html>
