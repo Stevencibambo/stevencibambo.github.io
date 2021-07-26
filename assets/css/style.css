@@ -397,11 +397,22 @@ section {
   list-style: none;
   padding: 0;
 }
+.about .content ol{
+  list-style: none;
+  padding: 0;
+  font-family: 'Courier New', Courier, monospace;
+}
+.about .content ol li{
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  color: #02396e;
+}
 
 .about .content ul li {
   margin-bottom: 20px;
   display: flex;
   align-items: center;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .about .content ul strong {
@@ -411,12 +422,23 @@ section {
 .about .content ul i {
   font-size: 16px;
   margin-right: 5px;
-  color: #0563bb;
+  color: #02396e;
   line-height: 0;
 }
-
+.about .content p{
+  border: 1px solid transparent;
+  font-family: 'Courier New', Courier, monospace;
+  margin-top: 10px;
+}
+.about .content p:first-child{
+  color: #02396e;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
 .about .content p:last-child {
-  margin-bottom: 0;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-size: 1.1rem;
 }
 
 /*--------------------------------------------------------------
