@@ -1,3 +1,3 @@
 # Steven CIBAMBO
 
-![name-of-you-image](https://your-copied-image-address)
+![Steven CIBAMBO](https://github.com/Stevencibambo/stevencibambo.github.io/blob/master/assets/img/bg-img.jpg)
